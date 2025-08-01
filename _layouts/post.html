@@ -8,14 +8,14 @@
 </head>
 <body>
     <div class="content-overlay">
-        <!-- 完全不变的导航栏 -->
+        <!-- 导航栏 -->
         <nav class="navbar">
             <div class="navbar-container">
                 <div class="logo">
-                    <a href="https://cedsj.github.io/"><img src="https://cedsj.github.io/webdata/photos/logo-t-black.PNG" alt="公司Logo"></a>
+                    <a href="#"><img src="https://cedsj.github.io/webdata/photos/logo-t-black.PNG" alt="公司Logo"></a>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="https://cedsj.github.io/">首页</a></li>
+                    <li><a href="https://cedsj.github.io/index.html">首页</a></li>
                     <li><a href="https://cedsj.github.io/about.html">关于我们</a></li>
                     <li><a href="https://www.douyin.com/user/MS4wLjABAAAAnwqS1nfj91Ytfelu-Zi70CVrf2rjEZbcCJwzYQV2-wsOfXqEO_G_gWwnIo05Dh_v?from_tab_name=main">视频</a></li>
                     <li><a href="https://cedsj.github.io/cooperate.html">商务合作</a></li>
@@ -31,13 +31,12 @@
         </nav>
         
         <div class="content-wrapper" id="contentWrapper">
-            <!-- 完全不变的左侧边栏 -->
             <aside class="sidebar sidebar-left">
                 <div class="sidebar-content">
                     <div class="sidebar-module author-info">
                         <h3>作者</h3>
-                        <img src="作者头像" alt="作者头像">
-                        <p>作者名字</p>
+                        <img src="https://p3-pc.douyinpic.com/img/aweme-avatar/tos-cn-avt-0015_416a8cd63ac0e2ab9d33b80fa51d90c4~c5_300x300.jpeg?from=2956013662" alt="作者头像">
+                        <p>CE的世界</p>
                     </div>
                     
                     <div class="sidebar-module">
@@ -52,33 +51,36 @@
                 </div>
             </aside>
             
-            <!-- 文章内容区 -->
             <main>
                 <h1 class="article-title">{{ page.title }}</h1>
-                {% if page.subtitle %}
                 <h2 class="subtitle">{{ page.subtitle }}</h2>
-                {% endif %}
                 
                 {{ content }}
                 
                 <div class="content-author">
                     <h3>作者</h3>
-                    <p>文章｜{{ page.author | default: "文章发布者" }}</p>
+                    <p>文章｜{{ page.author }}</p>
                     <p>发布时间｜{{ page.date | date: "%Y年%m月%d日" }}</p>
                     <p><span class="highlight">作者已声明原创</span></p>
                 </div>
             </main>
             
-            <!-- 完全不变的右侧边栏 -->
             <aside class="sidebar sidebar-right">
                 <div class="sidebar-content">
                     <div class="sidebar-module article-meta">
                         <h3>文章信息</h3>
-                        <p><strong>发布日期:</strong> {{ page.date | date: "%Y年%m月%d日" }}</p>
-                        <p><strong>最后更新:</strong> {{ page.last_modified_at | date: "%Y年%m月%d日" | default: "暂无更新" }}</p>
-                        <p><strong>阅读时长:</strong> 约{{ content | number_of_words | divided_by: 300 }}分钟</p>
-                        <p><strong>分类:</strong> {{ page.categories | default: "未分类" }}</p>
-                        <p><strong>标签:</strong> {{ page.tags | join: ", " }}</p>
+                        <p><strong>发布日期:</strong></p>
+                        <p>{{ page.date | date: "%Y年%m月%d日" }}</p>
+                        <p><strong>最后更新:</strong></p>
+                        <p>{{ page.last_modified_at | date: "%Y年%m月%d日" }}</p>
+                        <p><strong>阅读时长:</strong> 约{{ page.read_time }}分钟</p>
+                        <p><strong>分类:</strong> {{ page.category }}</p>
+                        <p><strong>标签:</strong></p>
+                        <p>
+                            {% for tag in page.tags %}
+                            {{ tag }}{% unless forloop.last %}, {% endunless %}
+                            {% endfor %}
+                        </p>
                     </div>
                     
                     <div class="sidebar-module">
@@ -94,7 +96,6 @@
             </aside>
         </div>
         
-        <!-- 完全不变的页脚 -->
         <footer>
             <div class="footer-content">
                 <div class="copyright">
@@ -130,7 +131,7 @@
         </footer>
     </div>
     
-    <!-- 完全不变的浮动按钮 -->
+    <!-- 右下角浮动按钮 -->
     <div class="floating-buttons">
         <button class="floating-button back-to-top" id="backToTop" title="返回顶部">
             ↑
@@ -140,7 +141,7 @@
             ≡
             <span class="tooltip">隐藏边栏</span>
         </button>
-        <a href="contact.html" class="floating-button customer-service" id="customerService" title="联系客服">
+        <a href="#" class="floating-button customer-service" id="customerService" title="联系客服">
             ?
             <span class="tooltip">联系客服</span>
         </a>
