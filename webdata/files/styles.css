@@ -757,3 +757,20 @@ footer {
 .highlight {
     color: #ffae51;
 }
+/* 针对有序列表 */
+ol {
+  /* 清除默认样式干扰，也可根据需求调整 */
+  margin: 1rem 0; 
+  /* 让列表整体和其他内容有间距，可按需改 */
+  padding-left: 2.5rem; 
+  /* 给列表项左边预留空间放数字编号 */
+  list-style: decimal outside; 
+  /* 数字编号放在列表项内容外，避免挤压文字 */
+}
+
+ol li {
+  margin: 0.5rem 0; 
+  /* 增加列表项之间的垂直间距，让排版更舒展 */
+  line-height: 1.6; 
+  /* 调整行高，避免文字上下拥挤 */
+}
