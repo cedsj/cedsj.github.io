@@ -1,0 +1,27 @@
+# 基础设置
+title: "CE的世界"
+description: "技术博客与项目分享" 
+baseurl: ""
+url: "https://cedsj.github.io"
+
+# 构建设置
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# 扩展设置
+author:
+  name: "CE"
+  email: "ceworld@yeah.net"
+  github: "cedsj"
+
+# 自定义变量（供模板调用）
+navbar_links:
+  - name: "首页"
+    url: "/"
+  - name: "关于"
+    url: "/about.html"
+  - name: "视频"
+    url: "https://www.douyin.com/your-account"
