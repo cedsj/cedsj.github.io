@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - CE的世界</title>
+    <link rel="stylesheet" href="https://cedsj.github.io/webdata/files/styles.css">
+</head>
+<body>
+    <div class="content-overlay">
+        <!-- 完全不变的导航栏 -->
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo">
+                    <a href="https://cedsj.github.io/"><img src="https://cedsj.github.io/webdata/photos/logo-t-black.PNG" alt="公司Logo"></a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="https://cedsj.github.io/">首页</a></li>
+                    <li><a href="https://cedsj.github.io/about.html">关于我们</a></li>
+                    <li><a href="https://www.douyin.com/user/MS4wLjABAAAAnwqS1nfj91Ytfelu-Zi70CVrf2rjEZbcCJwzYQV2-wsOfXqEO_G_gWwnIo05Dh_v?from_tab_name=main">视频</a></li>
+                    <li><a href="https://cedsj.github.io/cooperate.html">商务合作</a></li>
+                    <li><a href="https://cedsj.github.io/contact.html">联系我们</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper" id="contentWrapper">
+            <!-- 完全不变的左侧边栏 -->
+            <aside class="sidebar sidebar-left">
+                <div class="sidebar-content">
+                    <div class="sidebar-module author-info">
+                        <h3>作者</h3>
+                        <img src="作者头像" alt="作者头像">
+                        <p>作者名字</p>
+                    </div>
+                    
+                    <div class="sidebar-module">
+                        <h3>热门文章</h3>
+                        <ul>
+                            <li><a href="#">算法优化技巧</a></li>
+                            <li><a href="#">分布式系统设计</a></li>
+                            <li><a href="#">前端性能优化</a></li>
+                            <li><a href="#">数据库索引原理</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- 文章内容区 -->
+            <main>
+                <h1 class="article-title">{{ page.title }}</h1>
+                {% if page.subtitle %}
+                <h2 class="subtitle">{{ page.subtitle }}</h2>
+                {% endif %}
+                
+                {{ content }}
+                
+                <div class="content-author">
+                    <h3>作者</h3>
+                    <p>文章｜{{ page.author | default: "文章发布者" }}</p>
+                    <p>发布时间｜{{ page.date | date: "%Y年%m月%d日" }}</p>
+                    <p><span class="highlight">作者已声明原创</span></p>
+                </div>
+            </main>
+            
+            <!-- 完全不变的右侧边栏 -->
+            <aside class="sidebar sidebar-right">
+                <div class="sidebar-content">
+                    <div class="sidebar-module article-meta">
+                        <h3>文章信息</h3>
+                        <p><strong>发布日期:</strong> {{ page.date | date: "%Y年%m月%d日" }}</p>
+                        <p><strong>最后更新:</strong> {{ page.last_modified_at | date: "%Y年%m月%d日" | default: "暂无更新" }}</p>
+                        <p><strong>阅读时长:</strong> 约{{ content | number_of_words | divided_by: 300 }}分钟</p>
+                        <p><strong>分类:</strong> {{ page.categories | default: "未分类" }}</p>
+                        <p><strong>标签:</strong> {{ page.tags | join: ", " }}</p>
+                    </div>
+                    
+                    <div class="sidebar-module">
+                        <h3>相关推荐</h3>
+                        <ul>
+                            <li><a href="#">现代前端开发实践</a></li>
+                            <li><a href="#">云原生架构指南</a></li>
+                            <li><a href="#">数据结构精讲</a></li>
+                            <li><a href="#">网络安全基础</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        
+        <!-- 完全不变的页脚 -->
+        <footer>
+            <div class="footer-content">
+                <div class="copyright">
+                    <p>© CE的世界 版权所有。</p>
+                    <p>本网站所有内容，包括但不限于文字、图片、代码、（除非有特别标注）、UI设计等，均受著作权法保护。未经书面许可，任何单位或个人不得以任何方式复制、转载、修改、传播或用于商业用途。</p>
+                    <p>本网站提供的技术文章和代码示例仅供参考学习，作者不对其准确性、完整性或实用性做出任何保证。使用本网站内容所产生的风险由使用者自行承担。</p>
+                    <p>联系我们：<a href="mailto:ceworld@yeah.net">ceworld@yeah.net</a></p>
+                </div>
+                
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="https://cedsj.github.io/cooperate.html">商务合作</a></li>
+                        <li><a href="https://cedsj.github.io/contact.html">联系</a></li>
+                        <li><a href="https://cedsj.github.io/about.html">关于</a></li>
+                    </ul>
+                </div>
+
+                <div class="qr-codes">
+                    <div class="qr-code">
+                        <img src="https://cedsj.github.io/webdata/photos/qr3.jpg" alt="微信公众号">
+                        <span>微信公众号</span>
+                    </div>
+                    <div class="qr-code">
+                        <img src="https://cedsj.github.io/webdata/photos/qr2.PNG" alt="抖音账号">
+                        <span>抖音账号</span>
+                    </div>
+                    <div class="qr-code">
+                        <img src="https://cedsj.github.io/webdata/photos/qr1.jpg" alt="视频号">
+                        <span>视频号</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- 完全不变的浮动按钮 -->
+    <div class="floating-buttons">
+        <button class="floating-button back-to-top" id="backToTop" title="返回顶部">
+            ↑
+            <span class="tooltip">返回顶部</span>
+        </button>
+        <button class="floating-button" id="toggleSidebar" title="隐藏边栏">
+            ≡
+            <span class="tooltip">隐藏边栏</span>
+        </button>
+        <a href="contact.html" class="floating-button customer-service" id="customerService" title="联系客服">
+            ?
+            <span class="tooltip">联系客服</span>
+        </a>
+    </div>
+    
+    <script src="https://cedsj.github.io/webdata/files/script.js"></script>
+</body>
+</html>
