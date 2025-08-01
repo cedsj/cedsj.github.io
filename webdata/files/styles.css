@@ -281,7 +281,14 @@ main {
     z-index: 5;
     position: relative;
 }
-
+main a{
+    color:#77b7e1;
+    text-decoration: none;
+}
+main a:hover{
+    color:#369fe5;
+    text-decoration: underline;
+}
 /* 文章图片样式 */
 .article-image {
     max-width: 100%;
