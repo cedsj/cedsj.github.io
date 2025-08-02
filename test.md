@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "深入理解现代Web静态站点架构"
-subtitle: "从Markdown到生产环境的完整出版流程"
-date: 2023-11-15
+title: "本地部署DeepSeek"
+subtitle: "将DeepSeek部署至本地，无需网络即可使用"
+date: 2025-11-15
 author: "CE"
 categories: [技术架构]
-tags: [静态站点, Jekyll, CI/CD]
+tags: [AI，DeepSeek，部署]
 ---
 
-# 现代静态站点架构解析
+## 现代静态站点架构解析
 
 静态站点生成器正在改变Web开发的方式，以下是核心工作流程：
 
