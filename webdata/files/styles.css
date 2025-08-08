@@ -557,7 +557,6 @@ footer {
 
 .floating-button:hover {
     background-color: #2980b9;
-    transform: translateY(-3px);
 }
 
 .floating-button.customer-service {
