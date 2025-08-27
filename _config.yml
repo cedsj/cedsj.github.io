@@ -1,0 +1,6 @@
+title: CE的世界
+description: 分享技术与生活的博客
+baseurl: ""
+url: "https://cedsj.github.io"
+markdown: kramdown
+permalink: /posts/:title/
